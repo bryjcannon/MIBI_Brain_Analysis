@@ -137,10 +137,10 @@ for (PointNumber in pointList){
       #sumCounts = sumCounts/(dataSize*dataSize) 
       
       ##to calculate log transform total mean tif intensity
-      sumCounts = log(sumCounts+1)/(dataSize*dataSize)
+      #sumCounts = log(sumCounts+1)/(dataSize*dataSize)
       
       ##to calculate mean non-zero tif intensity
-      #sumCounts = sumCounts/(sum(countTable[2:nrow(countTable),"Freq"])) 
+      sumCounts = log(sumCounts/(sum(countTable[2:nrow(countTable),"Freq"])) )
      }
     
     tifData[index, gsub("\\.tif", "", basename(tifName))] = sumCounts
